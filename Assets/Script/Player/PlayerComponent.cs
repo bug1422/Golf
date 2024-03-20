@@ -12,6 +12,7 @@ public class PlayerComponent : MonoBehaviour
     void Awake()
     {
         Initialization();
+        Player.health = 20;
     }
 
     protected virtual void Initialization()
