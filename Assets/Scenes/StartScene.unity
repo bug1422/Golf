@@ -1177,8 +1177,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1242875961}
-        m_TargetAssemblyTypeName: SaveMenu, Assembly-CSharp
+      - m_Target: {fileID: 1873445396}
+        m_TargetAssemblyTypeName: ConfigMenu, Assembly-CSharp
         m_MethodName: OnQuitBtn
         m_Mode: 1
         m_Arguments:
