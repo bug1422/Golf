@@ -16,7 +16,7 @@ TagManager:
   - Background
   - Ground
   - Platform
-  - 
+  - Object
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Platform
     uniqueID: 1780525611
+    locked: 0
+  - name: Object
+    uniqueID: 696776717
     locked: 0
   - name: Player
     uniqueID: 2690149389

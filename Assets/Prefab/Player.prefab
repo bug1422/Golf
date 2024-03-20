@@ -201,7 +201,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1604817907
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -993136717, guid: f0af008e3891be04283b25dfb0830e90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 3808355992093691684}
   - component: {fileID: 3579620859835084954}
   - component: {fileID: 7575616784340852728}
+  - component: {fileID: 4379002951600092318}
   - component: {fileID: 1685457273798426666}
   - component: {fileID: 456623464020463184}
   m_Layer: 6
@@ -342,6 +343,24 @@ MonoBehaviour:
   clip: {fileID: 7400000, guid: c18b80bc12ed0e44380927892ff4b4c1, type: 2}
   climbingHorizontalOffset: 0.5
   detectDistance: 0.2
+--- !u!114 &4379002951600092318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9074653496357036875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11bcb1ec26b8c5f45b01ad16d70a1b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSlopeAngle: 70
+  slopeCheckDistance: 0.55
+  collideDistance: 0.46
+  offset: -1.07
+  fullFriction: {fileID: 6200000, guid: 108cb156cf97c494d826d44ef19a8de8, type: 2}
+  noFriction: {fileID: 6200000, guid: 41ba7b52339eecb48902c01a11512fb4, type: 2}
 --- !u!50 &1685457273798426666
 Rigidbody2D:
   serializedVersion: 4

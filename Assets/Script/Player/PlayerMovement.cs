@@ -12,7 +12,6 @@ public class PlayerMovement : PlayerComponent
     [SerializeField]
     private Transform groundCheck;
     private bool canJump;
-    private bool isFallingThroughPlatform;
     private Vector2 velocity;
     private Vector2 jumpForce;
     private LayerMask groundLayer;
@@ -55,7 +54,7 @@ public class PlayerMovement : PlayerComponent
     private void CheckGround()
     {
         Player.isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        if (isFallingThroughPlatform && rb.velocity.y != 0.0f)
+        if (Player.isFallingThroughPlatform && rb.velocity.y != 0.0f)
         {
             Player.isGrounded = false;
         }
@@ -85,7 +84,7 @@ public class PlayerMovement : PlayerComponent
                     velocity = new Vector2(speed * PlayerMovementInfo.xInput, 0.0f);
                     rb.velocity = velocity;
                 }
-                else if (Player.isGrounded && Player.isOnSlope && PlayerMovementInfo.canWalkOnSlope && !Player.isJumping && !isFallingThroughPlatform) //If on slope
+                else if (Player.isGrounded && Player.isOnSlope && PlayerMovementInfo.canWalkOnSlope && !Player.isJumping && !Player.isFallingThroughPlatform) //If on slope
                 {
                     velocity = new Vector2(speed * PlayerMovementInfo.slopeNormalPerp.x * -PlayerMovementInfo.xInput, speed * PlayerMovementInfo.slopeNormalPerp.y * -PlayerMovementInfo.xInput);
                     rb.velocity = velocity;
@@ -115,10 +114,6 @@ public class PlayerMovement : PlayerComponent
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-    }
-    public void setFalling(bool value)
-    {
-        isFallingThroughPlatform = value;
     }
     public void Kill()
     {

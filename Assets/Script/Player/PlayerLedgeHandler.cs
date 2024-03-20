@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerLedge : PlayerComponent
+public class PlayerLedgeHandler : PlayerComponent
 {
     [SerializeField]
     protected AnimationClip clip;

@@ -8,11 +8,11 @@ public class PlayerComponent : MonoBehaviour
     protected static CapsuleCollider2D col;
     protected static Animator anim;
     protected static SpriteRenderer sr;
+    protected static LineRenderer lr;
     // Start is called before the first frame update
     void Awake()
     {
         Initialization();
-        Player.health = 20;
     }
 
     protected virtual void Initialization()
@@ -21,9 +21,6 @@ public class PlayerComponent : MonoBehaviour
         col = GetComponentInChildren<CapsuleCollider2D>();
         anim = GetComponentInChildren<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
-        print(rb);
-        print(col);
-        print(anim);
-        print(sr);
+        lr = GetComponentInChildren<LineRenderer>();
     }
 }

@@ -19,7 +19,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Awake()
     {
-        side = GetComponent<Camera>();
+        side = GetComponentInChildren<Camera>();
         _mainCamera = Camera.main;
     }
 

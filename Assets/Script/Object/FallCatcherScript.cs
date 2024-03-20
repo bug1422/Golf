@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class FallCatcherScript : MonoBehaviour
 {
+    public GameObject HUD;
     // Start is called before the first frame update
     public GameObject SpawnPositionObject;
     public GameObject PlayerObject;
@@ -43,6 +44,7 @@ public class FallCatcherScript : MonoBehaviour
         var getPositionToSpanw = _possibleSpawnPosition.First(p => p.Key.Equals(getShortestDistance.Key));
         PlayerObject.transform.position = getPositionToSpanw.Value;
         Player.health -= 10;
+        HUD.GetComponent<HUD>().RemoveOneHeart();
         Debug.Log(Player.health);
     }
 

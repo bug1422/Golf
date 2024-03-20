@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerSpriteControl : PlayerComponent
 {
     [SerializeField]
-    private List<Sprite> swingLevel;
+    private Sprite swing;
     // Start is called before the first frame update
     protected override void Initialization()
     {
@@ -17,7 +17,7 @@ public class PlayerSpriteControl : PlayerComponent
         if (Player.isHolding)
         {
             anim.enabled = false;
-            sr.sprite = swingLevel[Player.charge];
+            sr.sprite = swing;
             StartCoroutine(Swing());
         }
         else

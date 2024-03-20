@@ -15,9 +15,14 @@ public class Player : MonoBehaviour
     public static bool isOnSlope;
     public static bool isHolding;
     public static bool isPlaying;
-    public static int charge = 0;
-    public static int health;
-
+    public static bool isFallingThroughPlatform;
+    public static int health = 50;
+    void Awake()
+    {
+        isAlive = true;
+        isFacingRight = true;
+        health = 50;
+    }
     private void Update()
     {
         if(health <= 0)
