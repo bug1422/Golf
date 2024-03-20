@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class FallCatcherScript : MonoBehaviour
 {
-    public GameObject HUD;
+    public GameObject healthBar;
     // Start is called before the first frame update
     public GameObject SpawnPositionObject;
     public GameObject PlayerObject;
@@ -21,12 +21,6 @@ public class FallCatcherScript : MonoBehaviour
             var childPosition = getchild.position;
             _possibleSpawnPosition.Add(getchild.name,childPosition);  
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,7 +38,7 @@ public class FallCatcherScript : MonoBehaviour
         var getPositionToSpanw = _possibleSpawnPosition.First(p => p.Key.Equals(getShortestDistance.Key));
         PlayerObject.transform.position = getPositionToSpanw.Value;
         Player.health -= 10;
-        HUD.GetComponent<HUD>().RemoveOneHeart();
+        healthBar.GetComponent<HealthBar>().RemoveOneHeart();
         Debug.Log(Player.health);
     }
 
