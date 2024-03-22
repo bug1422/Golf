@@ -27,7 +27,7 @@ public class PlayerMovement : PlayerComponent
     // Update is called once per frame
     protected void Update()
     {
-        if (Player.isAlive && !Player.isGrabbingLedge && !(Player.isHolding || Player.isPlaying))
+        if (!PauseMenu.GameIsPaused && Player.isAlive && !Player.isGrabbingLedge && !(Player.isHolding || Player.isPlaying))
         {
             PlayerMovementInfo.xInput = Input.GetAxisRaw("Horizontal");
             if (PlayerMovementInfo.xInput == 1 && !Player.isFacingRight) Flip();

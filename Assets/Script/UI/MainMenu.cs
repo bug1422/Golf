@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class MainMenu : MonoBehaviour
 {
     public GameObject saveMenu;
@@ -17,8 +17,18 @@ public class MainMenu : MonoBehaviour
         var slots = saveMenu.transform.Find("Save Slots");
         for (int i = 0; i < slots.childCount; i++)
         {
-            saves[i] = "";
-            slots.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>().text = "N/A";
+            var absolutePath = DataService.savePath + "slot#" + (i+1) + ".txt";
+            if (File.Exists(absolutePath))
+            {
+                var save = DataService.LoadData<SaveData>("slot#" + (i + 1) + ".txt");
+                saves[i] = "Loaded";
+                slots.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>().text = save.created.ToString("MMMM, dd yyyy");
+            }
+            else
+            {
+                saves[i] = "";
+                slots.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>().text = "N/A";
+            }
         }
         //
         saveMenu.SetActive(true);

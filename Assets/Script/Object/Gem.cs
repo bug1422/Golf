@@ -9,6 +9,7 @@ public class Gem : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball") || collision.gameObject.CompareTag("Player"))
         {
+            GameObject.Find("Save Handler").GetComponent<SaveHandler>().AddGem(transform.position);
             HUD.GetComponent<HUD>().AddScore();
             Destroy(transform.gameObject);
         }

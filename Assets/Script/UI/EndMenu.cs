@@ -23,6 +23,7 @@ public class EndMenu : MonoBehaviour
     public void OnRetry()
     {
         Debug.Log("retry");
+        GameObject.Find("GameManagement").GetComponent<GameManager>().Reset();
         SceneManager.LoadSceneAsync("MainScene");
     }
     public void OnMenuBtn()

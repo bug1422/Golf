@@ -1,0 +1,1 @@
+{"created":"2024-03-22T00:00:00+07:00","playerPosition":{"x":-3.76427531,"y":-0.896405041,"normalized":{"x":-0.9727976,"y":-0.231656969,"magnitude":1.0,"sqrMagnitude":1.00000012},"magnitude":3.86953616,"sqrMagnitude":14.97331},"health":50,"gems":[],"isKeyOpened":false}

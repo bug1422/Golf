@@ -26,7 +26,7 @@ public class PlayerAction : MonoBehaviour
     }
     void Update()
     {
-        if (Player.isAlive && Player.isGrounded)
+        if (!PauseMenu.GameIsPaused && Player.isAlive && Player.isGrounded)
         {
             if (Input.GetMouseButtonDown(0))
             {

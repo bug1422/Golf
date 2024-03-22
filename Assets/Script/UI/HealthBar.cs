@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField]
-    public float conversionRate = 10f;
+    public static float conversionRate = 10f;
     [SerializeField]
     private Image heart;
     private int totalHealth;
@@ -30,5 +29,4 @@ public class HealthBar : MonoBehaviour
         var count = transform.childCount;
         Destroy(transform.GetChild(count - 1).gameObject);
     }
-
 }

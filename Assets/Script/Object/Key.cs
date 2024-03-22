@@ -22,6 +22,7 @@ public class Key : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GameObject.Find("Save Handler").GetComponent<SaveHandler>().KeyUnlock();
         Destroy(Door);
         Destroy(this.gameObject);
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,7 @@ public class SaveMenu : MonoBehaviour
     private delegate void ConfirmAction();
     private ConfirmAction confirm;
     private bool IsConfirming;
+    public static string path;
     public void OnQuitBtn()
     {
         if (IsConfirming)
@@ -30,9 +32,10 @@ public class SaveMenu : MonoBehaviour
         }
         else
         {
-            desc.text = "Overwrite save file?";
-            confirm = OverwriteSave;
+            desc.text = "Load save file?";
+            confirm = LoadSave;
         }
+        SaveMenu.path = "Slot#"+i+".txt";
         SaveSlots.SetActive(false);
         Confirmation.SetActive(true);
         IsConfirming = true;
@@ -40,7 +43,6 @@ public class SaveMenu : MonoBehaviour
     public void ConfirmationYes()
     {
         confirm();
-        SceneManager.LoadScene("MainScene");
     }
     public void ConfirmationNo()
     {
@@ -50,10 +52,12 @@ public class SaveMenu : MonoBehaviour
     }
     private void CreateNewSave()
     {
-        print("new save");
+        SaveHandler.IsLoadGame = false;
+        SceneManager.LoadScene("MainScene");
     }
-    private void OverwriteSave()
+    private void LoadSave()
     {
-        print("overwrite save");
+        SaveHandler.IsLoadGame = true;
+        SceneManager.LoadScene("MainScene");
     }
 }

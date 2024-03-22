@@ -32,7 +32,7 @@ public class CameraMovement : MonoBehaviour
         var maxX = Globals.WorldBounds.max.x - width;
 
         var minY = Globals.WorldBounds.min.y + height;
-        var maxY = Globals.WorldBounds.extents.y - height;
+        var maxY = Globals.WorldBounds.max.y - height;
 
         _cameraBounds = new Bounds();
         _cameraBounds.SetMinMax(

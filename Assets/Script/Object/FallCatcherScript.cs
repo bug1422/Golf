@@ -38,6 +38,7 @@ public class FallCatcherScript : MonoBehaviour
         var getPositionToSpanw = _possibleSpawnPosition.First(p => p.Key.Equals(getShortestDistance.Key));
         PlayerObject.transform.position = getPositionToSpanw.Value;
         Player.health -= 10;
+        GameObject.Find("Save Handler").GetComponent<SaveHandler>().ChangeHealth();
         healthBar.GetComponent<HealthBar>().RemoveOneHeart();
         Debug.Log(Player.health);
     }

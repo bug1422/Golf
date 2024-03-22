@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameIsPaused = false;
     }
 
     // Update is called once per frame
@@ -48,7 +48,8 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnSaveBtn()
     {
-
+        GameObject.Find("Save Handler").GetComponent<SaveHandler>().OnSave();
+        Resume();
     }
     public void OnMenuBtn()
     {

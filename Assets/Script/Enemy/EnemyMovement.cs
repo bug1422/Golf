@@ -77,6 +77,5 @@ public class EnemyMovement : MonoBehaviour
         {
             info.xInput = -1;
         }
-        print(pos + " " + end + " " + start);
     }
 }
