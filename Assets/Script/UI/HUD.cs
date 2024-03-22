@@ -18,7 +18,7 @@ public class HUD : MonoBehaviour
     {
         score += 1;
         Score.text = score.ToString();
-        if(score == 3)
+        if(score == 13)
         {
             Time.timeScale = 0;
             Player.isAlive = false;
