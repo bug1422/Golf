@@ -35,7 +35,11 @@ public class EndMenu : MonoBehaviour
     public void OnQuitBtn()
     {
         Debug.Log("quit");
-        EditorApplication.isPlaying = false;
-        Application.Quit();
+
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                            Application.Quit();
+        #endif
     }
 }

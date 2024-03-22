@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         SaveHandler.IsLoadGame = false;
         SaveHandler.IsLoaded = false;
     }
-
+    private IEnumerator()
     private void Update()
     {
         SaveHandler.Instance.SceneTempData.playerPosition =  player.transform.position;
@@ -65,14 +65,11 @@ public class GameManager : MonoBehaviour
         player.transform.position = data.playerPosition;
         Player.health = data.health;
         var healthbar = GameObject.Find("Health").transform;
-        var total = (health - data.health) / HealthBar.conversionRate;
-        var count = healthbar.childCount;
+        var total = data.health / HealthBar.conversionRate;
         print(total);
-        print(count);
-        for (int i = 0; i < total; i++)
+        for(int i = total-1; i >= 0; i--)
         {
-            print(i);
-            Destroy(healthbar.GetChild(--count).gameObject);
+            Destroy(healthbar.GetChild(i).gameObject);
         }
         for (int i = 0; i < gems.transform.childCount; i++)
         {
