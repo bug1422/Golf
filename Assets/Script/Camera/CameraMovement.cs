@@ -51,11 +51,6 @@ public class CameraMovement : MonoBehaviour
 
 
         _targetPosition = GetCameraBounds();
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            side.enabled = true;
-            enabled = false;
-        }
         transform.position = _targetPosition;
     }
 
